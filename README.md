@@ -64,24 +64,32 @@ rates:
 
 ## 🔨 Compiling from Source
 
-This project uses **Gradle**. The repository contains two separate plugins that can be built independently.
+This project uses **Gradle (ScreamingBedWars) & Maven (Fire)**. The repository contains two separate plugins that can be built independently.
 
-To build **both** plugins at once, run:
+> To build **ScreamingBedWars-XP** at once, run:
+>
+> **On Linux / PowerShell:**
+> ```bash
+> ./gradlew clean build
+> ```
+>
+> **On Windows cmd:**
+> ```bat
+> gradlew.bat clean build
+> ```
+>
+> After building, you will find two JAR files in the following locations:
+> - `./plugin/build/libs/BedWars-<version>.jar` \\ 
+>   (This is the main plugin – **not** the `-unshaded` version!)
 
-**On Linux / PowerShell:**
-```bash
-./gradlew clean build
-```
-
-**On Windows cmd:**
-```bat
-gradlew.bat clean build
-```
-
-After building, you will find two JAR files in the following locations:
-- **ScreamingBedWars-XP**: `./plugin/build/libs/BedWars-<version>.jar`  
-  (This is the main plugin – **not** the `-unshaded` version!)
-- **Fire**: `./Fire/build/libs/fire-<version>.jar`
+> To build **Fire** at once, run:
+>
+> ```bash
+> mvn clean package
+> ```
+>
+> After building, you will find a JAR files in the following locations:
+> - `./target/Fire-<version>.jar`
 
 ## 📄 License
 

@@ -79,7 +79,7 @@ This project uses **Gradle (ScreamingBedWars) & Maven (Fire)**. The repository c
 > ```
 >
 > After building, you will find two JAR files in the following locations:
-> - `./plugin/build/libs/BedWars-<version>.jar` \\ 
+> - `./plugin/build/libs/BedWars-<version>.jar` \
 >   (This is the main plugin – **not** the `-unshaded` version!)
 
 > To build **Fire** at once, run:

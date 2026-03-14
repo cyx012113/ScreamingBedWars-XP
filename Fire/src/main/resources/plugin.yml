@@ -1,0 +1,8 @@
+name: fire
+version: 1.0.0
+main: com.script.fire.fire
+api-version: 1.21
+depend: [Vault]
+softdepend: []
+author: cyx012113
+description: 大厅余额清零，全服禁火，原生地形保护。

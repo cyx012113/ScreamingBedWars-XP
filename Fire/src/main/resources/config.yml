@@ -1,0 +1,3 @@
+lobby-world: "Lobby"
+clear-interval-ticks: 1200
+clear-bypass-permission: "expeconomy.bypass.clear"

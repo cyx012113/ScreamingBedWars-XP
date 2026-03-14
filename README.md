@@ -1,6 +1,6 @@
 # ScreamingBedWars-XP
 
-ScreamingBedWars-XP is a **modified fork** of [ScreamingBedWars](https://github.com/ScreamingSandals/BedWars) (branch `ver/0.2.x`).  
+ScreamingBedWars-XP is a **modified fork** of [ScreamingBedWars](https://github.com/ScreamingSandals/BedWars) (branch ver/0.2.x).  
 It directly modifies the original plugin source to introduce an **experience-based economy**, replacing the classic resource economy. This is a complete BedWars implementation and does **not** require the original ScreamingBedWars plugin to run.
 
 Forked by [@cyx012113](https://github.com/cyx012113). Original source code by [@Misat11](https://github.com/Misat11).

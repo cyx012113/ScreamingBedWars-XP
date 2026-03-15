@@ -1,0 +1,17 @@
+name: obsidian_change
+version: 1.0.0
+main: com.script.obsidian_change.obsidian_change
+api-version: 1.21
+author: cyx012113
+description: 黑曜石转换粉 - 3秒将黑曜石转换为木板
+
+commands:
+  obsidian:
+    description: 黑曜石转换粉管理命令
+    usage: /obsidian give [玩家] obsidian_change_powder [数量]
+    permission: obsidian.admin
+
+permissions:
+  obsidian.admin:
+    description: 允许使用 /obsidian 命令
+    default: op

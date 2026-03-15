@@ -25,6 +25,39 @@ Forked by [@cyx012113](https://github.com/cyx012113). Original source code by [@
 
 Fire is distributed as a separate JAR file (`fire.jar`). See the [Installation](#installation) section for details.
 
+## 🪨 Obsidian_Change – Special Item Plugin (included in this repository)
+
+[Obsidian_Change](https://github.com/cyx012113/screamingbedwars-xp/tree/main/Obsidian_Change) is a separate, lightweight plugin built with Maven. It adds a **special item** that allows players to convert obsidian into wood planks, perfect for breaking through bed defenses.
+
+### Features of Obsidian_Change
+
+*   **⏱️ 3-Second Conversion**: Right-click an obsidian block while holding the powder. After a 3-second wait, the obsidian transforms into oak planks.
+*   **❄️ Cooldown & Consumption**: The powder is consumed on use, and each player has a 5-second cooldown.
+*   **🔧 Admin Commands**: Use `/obsidian give <player> obsidian_change_powder [amount]` to give the item.
+*   **💰 Shop Integration**: Easily add the item to your ScreamingBedWars shop (see configuration below).
+
+Obsidian_Change is distributed as a separate JAR file (`obsidian-change-1.0.0.jar`). See the [Installation](#installation) section for details.
+
+### Integrating Obsidian_Change into ScreamingBedWars Shop
+
+To make the powder purchasable in-game, add the following entry to your `shop.yml` (usually located in the arena folder or global shop):
+
+```yaml
+- price: 300 of gold   # or use Vault economy if configured
+  stack:
+    type: REDSTONE
+    amount: 1
+    display-name: "&dObsidian Change Powder"
+    lore:
+      - "&7Right-click obsidian"
+      - "&7Wait 3 seconds to convert to planks"
+      - "&7Cooldown: 5 seconds"
+    # If you use custom model data for resource packs:
+    # custom-model-data: 10001
+```
+
+If you are using Vault economy for purchases, replace `price: 300 of gold` with a Vault price (e.g., `price: 300` with `price-type: vault`).
+
 ## 📋 Requirements
 
 *   **Java**: 21 or higher
@@ -46,6 +79,11 @@ Fire is distributed as a separate JAR file (`fire.jar`). See the [Installation](
 2.  Place `fire.jar` into your server's `plugins` folder.
 3.  Restart your server. You can customize Fire's settings in `plugins/Fire/config.yml`.
 
+### Installing Obsidian_Change (Optional)
+1.  Download the latest `obsidian-change-1.0.0.jar` from the same [Releases](https://github.com/cyx012113/screamingbedwars-xp/releases) page.
+2.  Place the JAR file into your server's `plugins` folder.
+3.  Restart your server. No configuration file is required, but you can adjust the conversion time or cooldown by modifying the source code (see [Compiling from Source](#-compiling-from-source)).
+
 ## 🚀 Configuration
 
 ScreamingBedWars-XP will generate a `config.yml` file in its data folder on the first run.
@@ -64,35 +102,44 @@ rates:
 
 ## 🔨 Compiling from Source
 
-This project uses **Gradle (ScreamingBedWars) & Maven (Fire)**. The repository contains two separate plugins that can be built independently.
+This project uses **Gradle (ScreamingBedWars-XP)** and **Maven (Fire & Obsidian_Change)**. The repository contains three separate plugins that can be built independently.
 
-> To build **ScreamingBedWars-XP** at once, run:
->
-> **On Linux / PowerShell:**
-> ```bash
-> ./gradlew clean build
-> ```
->
-> **On Windows cmd:**
-> ```bat
-> gradlew.bat clean build
-> ```
->
-> After building, you will find two JAR files in the following locations:
-> - `./plugin/build/libs/BedWars-<version>.jar` \
->   (This is the main plugin – **not** the `-unshaded` version!)
+### Building ScreamingBedWars-XP
 
-> To build **Fire** at once, run:
->
-> ```bash
-> mvn clean package
-> ```
->
-> After building, you will find a JAR files in the following locations:
-> - `./target/Fire-<version>.jar`
+**On Linux / PowerShell:**
+```bash
+./gradlew clean build
+```
+
+**On Windows cmd:**
+```bat
+gradlew.bat clean build
+```
+
+After building, you will find the JAR file at:
+- `./plugin/build/libs/BedWars-<version>.jar`  
+  (This is the main plugin – **not** the `-unshaded` version!)
+
+### Building Fire
+
+```bash
+cd Fire
+mvn clean package
+```
+
+The JAR will be located at `./Fire/target/fire-<version>.jar`.
+
+### Building Obsidian_Change
+
+```bash
+cd Obsidian_Change
+mvn clean package
+```
+
+The JAR will be located at `./Obsidian_Change/target/obsidian-change-<version>.jar`.
 
 ## 📄 License
 
 This project is licensed under the **GNU Lesser General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
 
-Both the modified ScreamingBedWars-XP and the independent Fire plugin are distributed under the same LGPL v3 license.
+All three plugins – the modified ScreamingBedWars-XP, Fire, and Obsidian_Change – are distributed under the same LGPL v3 license.

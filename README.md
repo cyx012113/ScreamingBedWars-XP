@@ -43,7 +43,7 @@ Obsidian_Change is distributed as a separate JAR file (`obsidian-change-1.0.0.ja
 To make the powder purchasable in-game, add the following entry to your `shop.yml` (usually located in the arena folder or global shop):
 
 ```yaml
-- price: 300
+- price: 300 of gold
   stack:
     type: REDSTONE
     amount: 1
